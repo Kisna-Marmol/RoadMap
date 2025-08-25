@@ -61,6 +61,8 @@ public class Ejercicio_03 {
             Son útiles en situaciones donde el orden de llegada es relevante, el ejemplo típico, es la cola
             de tareas de la bandeja de impresión.
          */
+        nuevo.colas();
+
 
     }
 }

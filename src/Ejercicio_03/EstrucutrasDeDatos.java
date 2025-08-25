@@ -542,6 +542,8 @@ public class EstrucutrasDeDatos {
                     System.err.println("Error: Opcion no valida.");
             }
         }while (opcion != 0);
+
+        s.close();
     }
 
     //Método para esperar que el usuario presione una tecla
