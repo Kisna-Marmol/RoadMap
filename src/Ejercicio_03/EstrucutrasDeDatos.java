@@ -563,7 +563,55 @@ public class EstrucutrasDeDatos {
         ArbolBinario arbol = new ArbolBinario();
         String mensaje = "Menu"+
                 "\n1. Insertar"+
-                
+                "\n2. Mostrar recorridos"+
+                "\n3. Eliminar"+
+                "\n4. Actualizar"+
+                "\n0. salir"+
+                "\nSeleccione una opcion:";
+        do {
+            System.out.println(mensaje);
+            opcion = s.nextInt();
+
+            switch (opcion){
+                case 1:
+                    System.out.println("Ingrese la cantidad de datos a agregar:");
+                    int cantidad = s.nextInt();
+                    System.out.println("Ingresando:");
+                    for (int i = 0; i < cantidad; i++){
+                        int dato = s.nextInt();
+
+                        arbol.insertar(dato);
+                    }
+                    esperarTecla(s);
+                    break;
+                case 2:
+                    System.out.println("Recorrido In-Order");
+                    arbol.inOrder(arbol.raiz);
+
+                    System.out.println("Recorrido Pre-Order");
+                    arbol.preOrder(arbol.raiz);
+
+                    System.out.println("Recorrido Post-Order");
+                    arbol.postOrder(arbol.raiz);
+
+                    esperarTecla(s);
+                    break;
+                case 3:
+                    System.out.println("Ingrese el dato a eliminar:");
+                    int eliminar = s.nextInt();
+
+                    arbol.eliminar(eliminar);
+
+                    esperarTecla(s);
+                    break;
+                case 0:
+                    System.out.println("Saliendo del sistema...");
+                    System.exit(0);
+                    break;
+                default:
+                    System.err.println("Error: Opcion incorrecta");
+            }
+        }while (opcion != 0);
 
     }
 

@@ -32,6 +32,54 @@ public class ArbolBinario {
         return actual;
     }
 
+    //Metodo para eliminar el valor de un arbol
+    public void eliminar(int valor){
+        raiz = eliminarRecursivo(raiz, valor);
+    }
+
+    private Nodo eliminarRecursivo(Nodo actual, int valor){
+        if (actual == null) return null; //Nodo no encontrado
+
+        if (valor < actual.valor){
+            actual.izquierdo = eliminarRecursivo(actual.izquierdo, valor);
+        } else if (valor > actual.valor) {
+            actual.derecho = eliminarRecursivo(actual.derecho, valor);
+        } else {
+            // Nodo encontrado → tres casos
+            // 1. Nodo sin hijos
+            if (actual.izquierdo == null && actual.derecho == null){
+                return null;
+            }
+
+            // 2. Nodo con un hijo
+            if(actual.izquierdo == null) return actual.derecho;
+            if (actual.derecho == null) return actual.izquierdo;
+
+            // 3. Nodo con dos hijos
+            int minValor = encontrarMinimo(actual.derecho);
+            actual.valor = minValor;
+            actual.derecho = eliminarRecursivo(actual.derecho, minValor);
+        }
+        return actual;
+    }
+
+    //Metodo auxiliar para encontrar el valor minimo en un subArbol
+    public int encontrarMinimo(Nodo nodo){
+        while (nodo.izquierdo != null){
+            nodo = nodo.izquierdo;
+        }
+        return nodo.valor;
+    }
+
+    //Metodo para actualizar un valor
+    public void actualizar(int valorAntiguo, int valorNuevo){
+        //Eliminar el valor antiguo
+        eliminar(valorAntiguo);
+
+        //Insertar nuevo valor
+        insertar(valorNuevo);
+    }
+
     // Recorrido In-Order (izquierda, raíz, derecha)
     public void inOrder(Nodo nodo){
         if (nodo != null){
@@ -56,4 +104,6 @@ public class ArbolBinario {
         postOrder(nodo.derecho);
         System.out.print(nodo.valor + " ");
     }
+
+
 }
