@@ -63,6 +63,14 @@ public class Ejercicio_03 {
          */
         nuevo.colas();
 
+        //Arboles
+        /*
+            Son estructuras de datos jerárquicas que se utilizan para organizar datos de manera eficiente.
+            Los árboles binarios, como el árbol de búsqueda binaria, son ejemplos comunes en Java y son
+            esenciales en algoritmos de búsqueda y ordenación.
+
+            Son indicados para grandes conjuntos de datos donde la consulta necesita de grandes recursos.
+         */
 
     }
 }

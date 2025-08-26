@@ -546,6 +546,27 @@ public class EstrucutrasDeDatos {
         s.close();
     }
 
+    public void arbol(){
+        /*
+            Un árbol es una estructura de datos jerárquica compuesta por nodos.
+            Cada nodo tiene:
+
+            * Un valor (dato almacenado).
+
+            * Una referencia al hijo izquierdo.
+
+            * Una referencia al hijo derecho.
+
+            En un árbol binario cada nodo puede tener como máximo 2 hijos.
+         */
+
+        ArbolBinario arbol = new ArbolBinario();
+        String mensaje = "Menu"+
+                "\n1. Insertar"+
+                
+
+    }
+
     //Método para esperar que el usuario presione una tecla
     private static void esperarTecla(Scanner sc) {
         System.out.println("\nPresiona ENTER para continuar...");
