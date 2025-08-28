@@ -606,9 +606,24 @@ public class EstrucutrasDeDatos {
                     esperarTecla(s);
                     break;
                 case 4:
+                    System.out.println("Ingrese el dato a actualizar:");
+                    int actualizar = s.nextInt();
+                    System.out.println("Ingrese el dato nuevo:");
+                    int nuevo = s.nextInt();
+
+                    arbol.actualizar(actualizar,nuevo);
                     esperarTecla(s);
                     break;
                 case 5:
+                    System.out.println("Ingrese el dato a buscar:");
+                    int buscar = s.nextInt();
+
+                    if (arbol.buscar(buscar)) {
+                        System.out.println("\nEl valor " + buscar + " SÍ está en el árbol.");
+                    } else {
+                        System.out.println("\nEl valor " + buscar + " NO está en el árbol.");
+                    }
+
                     esperarTecla(s);
                     break;
                 case 0:

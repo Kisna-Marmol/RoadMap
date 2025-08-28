@@ -61,7 +61,7 @@ public class Ejercicio_03 {
             Son útiles en situaciones donde el orden de llegada es relevante, el ejemplo típico, es la cola
             de tareas de la bandeja de impresión.
          */
-        nuevo.colas();
+        //nuevo.colas();
 
         //Arboles
         /*
@@ -71,6 +71,6 @@ public class Ejercicio_03 {
 
             Son indicados para grandes conjuntos de datos donde la consulta necesita de grandes recursos.
          */
-
+        nuevo.arbol();
     }
 }

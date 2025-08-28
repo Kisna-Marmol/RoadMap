@@ -80,6 +80,26 @@ public class ArbolBinario {
         insertar(valorNuevo);
     }
 
+    //Método para buscar un valor en el árbol
+    public boolean buscar(int valor) {
+        return buscarRecursivo(raiz, valor);
+    }
+
+    private boolean buscarRecursivo(Nodo actual, int valor) {
+        if (actual == null) {
+            return false; // No encontrado
+        }
+
+        if (valor == actual.valor) {
+            return true; // Encontrado
+        }
+
+        // Si es menor, busca en el subárbol izquierdo
+        return valor < actual.valor
+                ? buscarRecursivo(actual.izquierdo, valor)
+                : buscarRecursivo(actual.derecho, valor);
+    }
+
     // Recorrido In-Order (izquierda, raíz, derecha)
     public void inOrder(Nodo nodo){
         if (nodo != null){
