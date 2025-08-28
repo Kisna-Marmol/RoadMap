@@ -566,6 +566,7 @@ public class EstrucutrasDeDatos {
                 "\n2. Mostrar recorridos"+
                 "\n3. Eliminar"+
                 "\n4. Actualizar"+
+                "\n5.Buscar"+
                 "\n0. salir"+
                 "\nSeleccione una opcion:";
         do {
@@ -602,6 +603,12 @@ public class EstrucutrasDeDatos {
 
                     arbol.eliminar(eliminar);
 
+                    esperarTecla(s);
+                    break;
+                case 4:
+                    esperarTecla(s);
+                    break;
+                case 5:
                     esperarTecla(s);
                     break;
                 case 0:
