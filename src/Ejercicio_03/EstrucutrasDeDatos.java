@@ -566,7 +566,7 @@ public class EstrucutrasDeDatos {
                 "\n2. Mostrar recorridos"+
                 "\n3. Eliminar"+
                 "\n4. Actualizar"+
-                "\n5.Buscar"+
+                "\n5. Buscar"+
                 "\n0. salir"+
                 "\nSeleccione una opcion:";
         do {

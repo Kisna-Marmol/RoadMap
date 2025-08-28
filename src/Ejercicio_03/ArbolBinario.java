@@ -120,6 +120,10 @@ public class ArbolBinario {
 
     // Recorrido Post-Order (izquierda, derecha, raíz)
     public void postOrder(Nodo nodo){
+        if (nodo == null) {   // 👈 condición de parada obligatoria
+            return;
+        }
+
         postOrder(nodo.izquierdo);
         postOrder(nodo.derecho);
         System.out.print(nodo.valor + " ");
