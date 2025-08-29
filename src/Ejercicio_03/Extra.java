@@ -30,23 +30,50 @@ public class Extra {
                     System.out.println("AGREGAR CONTACTO");
                     System.out.println("Ingrese el nombre:");
                     String nombre = s.nextLine();
-                    age.add(nombre);
                     System.out.println("Ingrese el numero de telefono:");
                     String telefono = s.nextLine();
-                    age.add(telefono);
 
-                    agenda.put(nombre,telefono);
+                    if (telefono.matches("\\d+") && telefono.length() <= 8){ // \\d+ busca uno o mas digitos
+                        agenda.put(nombre,telefono);
+                    }else {
+                        System.err.println("Error: El numero de telefono contiene datos no numericos o es muy largo.");
+                    }
+
+                    esperarTecla(s);
+                    break;
+
+                case 2:
+                    s.nextLine();
+                    System.out.println("Ingrese el nombre del contacto a buscar:");
+                    String contacto = s.nextLine();
+
+                    String resultado = agenda.get(contacto);
+
+                    if (resultado != null){
+                        System.out.println("CONTACTO");
+                        System.out.println("Nombre = " + contacto + ", Numero = " + resultado);
+                    } else {
+                        System.out.println("No se encontro resultado.");
+                    }
+
+                    esperarTecla(s);
+                    break;
+                case 3:
+                    System.out.println("Ingrese el nombre del contacto a actualizar:");
+                    String actualizar = s.nextLine();
+                    System.out.println("Ingrese el nuevo numero:");
+                    String nuevoNumero = s.nextLine();
+
+                    agenda.replace(actualizar,nuevoNumero);
 
                     esperarTecla(s);
                     break;
                 case 5:
                     System.out.println("LISTA DE CONTACTOS");
-                    System.out.println(agenda);
-
-                    System.out.println("ArrayList");
-                    for (int i = 0; i < age.size(); i++){
-                        System.out.println("Nombre = "+age.get(i) +", telefono = "+age.get(i+1));
+                    for (var entry : agenda.entrySet()){
+                        System.out.println("Nombre = "+entry.getKey()+", Numero = "+entry.getValue());
                     }
+
                     esperarTecla(s);
                     break;
                 case 0:
