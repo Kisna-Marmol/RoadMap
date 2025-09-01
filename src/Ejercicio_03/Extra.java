@@ -59,6 +59,7 @@ public class Extra {
                     esperarTecla(s);
                     break;
                 case 3:
+                    s.nextLine();
                     System.out.println("Ingrese el nombre del contacto a actualizar:");
                     String actualizar = s.nextLine();
                     System.out.println("Ingrese el nuevo numero:");
@@ -66,6 +67,28 @@ public class Extra {
 
                     agenda.replace(actualizar,nuevoNumero);
 
+                    esperarTecla(s);
+                    break;
+                case 4:
+                    //Para eliminar un elemento, utilice el remove()método y consulte la clave:
+                    System.out.println("¿Deseas eliminar un (1. elemento o 0. todos)?");
+                    int desicion = s.nextInt();
+                    s.nextLine();
+                    if(desicion == 1){
+                        System.out.println("Ingrese el nombre de contacto a buscar:");
+                        String buscar = s.nextLine();
+
+                        resultado = agenda.remove(buscar);
+
+                        if (resultado != null){
+                            System.out.println("El contacto '"+buscar+"' con numero '"+resultado+"' eliminado correctamente.");
+                        }else {
+                            System.err.println("No se pudo eliminar el contacto.");
+                        }
+                    } else if (desicion == 0) {
+                        agenda.clear();
+                        System.out.println("Datos eliminados exitosamente.");
+                    }
                     esperarTecla(s);
                     break;
                 case 5:
