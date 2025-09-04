@@ -61,6 +61,61 @@ public class Ejercicio_04 {
         System.out.println("¿Igual sin importar mayusculas? " + texto.equalsIgnoreCase("hola mundo"));
 
         //13. Quitar espacios extremos
+        String conEspacios = "  Hola  ";
+        System.out.println("Trim: '" + conEspacios.trim() + "'");
 
+        //14. Reemplazo usando regex
+        String numeros = "abc123def456";
+        System.out.println("Solo letras: " + numeros.replaceAll("[0-9]",""));
+        System.out.println("Solo numeros: " + numeros.replaceAll("[^0-9]",""));
+
+        //15. Conversion de String a numeros y viceversa
+        String numTexto = "42";
+        int numero = Integer.parseInt(numTexto);
+        System.out.println("String a numeros: " + (numero + 1));
+        String numCadena = String.valueOf(99);
+        System.out.println("Numero a String: " + numCadena);
+
+        //16. Comparaciones Lexicograficas
+        String a = "abc", b = "abd";
+        System.out.println("Comparacion: " + a.compareTo(b)); // <0 si a < b
+
+        //17. Formateo con printf
+        System.out.printf("Formateo Printf: Nombre=%s, Edad=%d%n", nombre, edad);
+
+
+        /*
+            Operaciones que cubre:
+
+            Acceso por índice → charAt
+
+            Subcadenas → substring
+
+            Longitud → length
+
+            Concatenación → +
+
+            Repetición → repeat
+
+            Recorrido → toCharArray o for
+
+            Mayúsculas / Minúsculas → toUpperCase, toLowerCase
+
+            Reemplazo → replace, replaceAll
+
+            División → split
+
+            Unión → String.join
+
+            Interpolación → String.format, printf
+
+            Verificación → startsWith, endsWith, contains, isEmpty, equals, equalsIgnoreCase
+
+            Quitar espacios → trim
+
+            Conversión String <-> Número → parseInt, valueOf
+
+            Comparación lexicográfica → compareTo
+         */
     }
 }
